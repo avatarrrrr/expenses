@@ -1,3 +1,4 @@
+import 'package:expenses/components/adaptative_Button.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -44,62 +45,65 @@ class _TransactionFormState extends State<TransactionForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 5,
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          children: <Widget>[
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'Title',
-              ),
-              controller: _titleController,
-              onSubmitted: (_) => _submitForm(),
-            ),
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'Value (R\$)',
-              ),
-              controller: _valueController,
-              keyboardType: TextInputType.numberWithOptions(decimal: true),
-              onSubmitted: (_) => _submitForm(),
-            ),
-            Container(
-              height: 70,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    _selectedDate == null
-                        ? 'No date selected!'
-                        : 'Date: ${DateFormat('dd/MM/yy').format(_selectedDate)}',
-                  ),
-                  FlatButton(
-                    child: Text(
-                      'Select Date',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    onPressed: _showDatePicker,
-                    textColor: Theme.of(context).primaryColor,
-                  ),
-                ],
-              ),
-            ),
-            Row(
-              children: [
-                RaisedButton(
-                  child: Text('New Transaction'),
-                  onPressed: _submitForm,
-                  color: Theme.of(context).primaryColor,
-                  textColor: Theme.of(context).textTheme.button.color,
+    return SingleChildScrollView(
+      child: Card(
+        elevation: 5,
+        child: Padding(
+          padding: EdgeInsets.only(
+            top: 10,
+            left: 10,
+            right: 10,
+            bottom: 10 + MediaQuery.of(context).viewInsets.bottom,
+          ),
+          child: Column(
+            children: <Widget>[
+              TextField(
+                decoration: InputDecoration(
+                  labelText: 'Title',
                 ),
-              ],
-              mainAxisAlignment: MainAxisAlignment.end,
-            ),
-          ],
+                controller: _titleController,
+                onSubmitted: (_) => _submitForm(),
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  labelText: 'Value (R\$)',
+                ),
+                controller: _valueController,
+                keyboardType: TextInputType.numberWithOptions(decimal: true),
+                onSubmitted: (_) => _submitForm(),
+              ),
+              Container(
+                height: 70,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      _selectedDate == null
+                          ? 'No date selected!'
+                          : 'Date: ${DateFormat('dd/MM/yy').format(_selectedDate)}',
+                    ),
+                    FlatButton(
+                      child: Text(
+                        'Select Date',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      onPressed: _showDatePicker,
+                      textColor: Theme.of(context).primaryColor,
+                    ),
+                  ],
+                ),
+              ),
+              Row(
+                children: [
+                  AdaptativeButton(
+                      label: 'New Transaction', onPressed: _submitForm),
+                ],
+                mainAxisAlignment: MainAxisAlignment.end,
+              ),
+            ],
+          ),
         ),
       ),
     );
