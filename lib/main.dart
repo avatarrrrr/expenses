@@ -73,10 +73,10 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Widget _getIconButton(IconData icon, Function fn) {
+  Widget _getIconButton(IconData icon, Function function) {
     return Platform.isIOS
         ? GestureDetector(
-            onTap: fn,
+            onTap: function,
             child: Icon(
               icon,
             ))
@@ -84,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: Icon(
               icon,
             ),
-            onPressed: fn,
+            onPressed: function,
           );
   }
 
@@ -92,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
 
-    bool isLandscape = mediaQuery.orientation == Orientation.landscape;
+    final bool isLandscape = mediaQuery.orientation == Orientation.landscape;
 
     final iconList = Platform.isIOS ? CupertinoIcons.refresh : Icons.list;
 
@@ -121,11 +121,13 @@ class _MyHomePageState extends State<MyHomePage> {
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
               children: actions,
-            ))
+            ),
+          )
         : AppBar(
             title: Text('Pessoal Expenses'),
             actions: actions,
           );
+
     final avaliableHeight = mediaQuery.size.height -
         appBar.preferredSize.height -
         mediaQuery.padding.top;
@@ -152,7 +154,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Platform.isIOS
         ? CupertinoPageScaffold(
-            navigationBar: null,
+            navigationBar: appBar,
             child: bodyPage,
           )
         : Scaffold(
