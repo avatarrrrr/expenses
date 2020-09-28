@@ -16,7 +16,7 @@ Expenses
 
 [//]: # (Add your gifs/images here:)
 <div align="center">
-  <img src="https://media.tenor.com/images/94b67f5733888c9f42635a977e890678/tenor.gif" alt="demo" height="425">
+  <img src="assets/images/ExpensesApp.gif" alt="demo" height="425">
 </div>
 
 <hr />
