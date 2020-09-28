@@ -1,16 +1,38 @@
-# expenses
+<h1 align="center">
+<br>
+  <img src="https://static.thenounproject.com/png/22910-200.png" alt="Expenses" width="120">
+<br>
+<br>
+Expenses
+</h1>
 
-A new Flutter project.
+<p align="center">Manage your expenses with the wonderful app!</p>
 
-## Getting Started
+<p align="center">
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License MIT">
+  </a>
+</p>
 
-This project is a starting point for a Flutter application.
+[//]: # (Add your gifs/images here:)
+<div align="center">
+  <img src="https://media.tenor.com/images/94b67f5733888c9f42635a977e890678/tenor.gif" alt="demo" height="425">
+</div>
 
-A few resources to get you started if this is your first Flutter project:
+<hr />
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Features
+[//]: # (Add the features of your project here:)
+This app features all the latest tools and practices in mobile development!
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Flutter** — A open-source UI software development kit created by Google. It is used to develop applications for Android, iOS, Linux, Mac, Windows, Google Fuchsia, and the web from a single codebase. 
+
+## Getting started
+
+- git clone https://github.com/require64bits/expenses.git
+
+- Open Project in your favorite IDE :)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) page for details.
